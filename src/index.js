@@ -4,8 +4,8 @@ import React from 'react';
 import {render} from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-import EmployeeList from './components/EmployeeList';
+import EmployeeDirectory from './components/EmployeeDirectory';
 
-render(<EmployeeList/>,
+render(<EmployeeDirectory/>,
   document.getElementById('app')
 );

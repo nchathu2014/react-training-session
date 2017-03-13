@@ -1,111 +1,19 @@
-import React, {PropTypes,Component} from 'react';
-import logo from './../img/welcome.png';
-import './../styles/main.scss';
+import React from 'react';
+import EmployeeListItem from './EmployeeListItem';
 
-class EmployeeList extends Component {
+const EmployeeList = (props) => {
 
-/**
- * RootComponent constructor
- * @param props
- */
-    constructor(props) {
-    super(props);
-    this._initEmployeeList();
-    this.state = {};
-}
+  let employeeList = props.employeeList;
 
-/**
- * Custom Function - Method binding to 'this'
- * @private
- */
-    _initEmployeeList() {
-    //bind custom function here
-}
+  const generateListItems = employeeList.map((employee) => {
+    return (<EmployeeListItem data={employee}/>)
+  })
 
-/**
- * Life Cycle function - componentWillMount
- */
-    componentWillMount() {
-}
-
-/**
- * Life Cycle function - componentDidMount
- */
-    componentDidMount() {
-}
-
-/**
- * Life Cycle function - componentWillReceiveProps
- * @param newProps
- */
-    componentWillReceiveProps(newProps) {
-}
-
-/**
- * Life Cycle function - shouldComponentUpdate
- * @param newProps
- * @param newState
- * @returns {boolean}
- */
-    shouldComponentUpdate(newProps, newState) {
-    return true;
-}
-
-/**
- * Life Cycle function - componentWillUpdate
- * @param nextProps
- * @param nextState
- */
-    componentWillUpdate(nextProps, nextState) {
-}
-
-/**
- * Life Cycle function - componentDidUpdate
- * @param prevProps
- * @param prevState
- */
-    componentDidUpdate(prevProps, prevState) {
-}
-
-/**
- * Life Cycle function - componentWillUnmount
- */
-    componentWillUnmount() {
-}
-
-/**
- * Life Cycle function - render
- * @returns {XML}
- */
-    render() {
-    return (
-    
-        <div className='container-fluid'>
-            <div className="row">
-                <div className="col-lg-12">
-                    <img src={logo} alt=""/>
-                        <h1>
-                            Welcome to React Starter Kit
-                        </h1>
-                        <p>Powered with Bootstratp (V3)</p>
-                </div>
-            </div>
-            </div>
-    
-    );
-}
-}
-
-/**
- *
- * @type {{}}
- */
-EmployeeList.propTypes = {};
-
-/**
- *
- * @type {{}}
- */
-EmployeeList.defaultProps = {};
+  return (
+    <ul id="employee-list" className="list">
+      {generateListItems}
+    </ul>
+  );
+};
 
 export default EmployeeList;
