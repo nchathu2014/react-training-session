@@ -14,68 +14,33 @@ class EmployeeDirectory extends Component {
    */
   constructor(props) {
     super(props);
-    this._initEmployeeDirectory();
-    this.state = {};
-    this.state.employeeList = Data.EMPLOYEE_LIST;
+    this.toggleListItem = this.toggleListItem.bind(this);
+    this.state = {
+      employeeList: Data.EMPLOYEE_LIST,
+      isListItemOpen: true,
+      openedListItemId: 12
+    };
   }
 
-  /**
-   * Custom Function - Method binding to 'this'
-   * @private
-   */
-  _initEmployeeDirectory() {
-    //bind custom function here
-  }
-
-  /**
-   * Life Cycle function - componentWillMount
-   */
-  componentWillMount() {
-  }
-
-  /**
-   * Life Cycle function - componentDidMount
-   */
-  componentDidMount() {
-  }
-
-  /**
-   * Life Cycle function - componentWillReceiveProps
-   * @param newProps
-   */
-  componentWillReceiveProps(newProps) {
-  }
-
-  /**
-   * Life Cycle function - shouldComponentUpdate
-   * @param newProps
-   * @param newState
-   * @returns {boolean}
-   */
-  shouldComponentUpdate(newProps, newState) {
-    return true;
-  }
-
-  /**
-   * Life Cycle function - componentWillUpdate
-   * @param nextProps
-   * @param nextState
-   */
-  componentWillUpdate(nextProps, nextState) {
-  }
-
-  /**
-   * Life Cycle function - componentDidUpdate
-   * @param prevProps
-   * @param prevState
-   */
-  componentDidUpdate(prevProps, prevState) {
-  }
-
-  /**
-   * Life Cycle function - componentWillUnmount
-   */
-  componentWillUnmount() {
+  toggleListItem(id) {
+    let that = this;
+    let newState = {
+      employeeList: Data.EMPLOYEE_LIST,
+      isListItemOpen: "",
+      openedListItemId: ""
+    };
+    if (this.state.isListItemOpen) {
+      if (this.state.openedListItemId == id) {
+        newState.isListItemOpen = false;
+      } else {
+        newState.isListItemOpen = true;
+        newState.openedListItemId = id;
+      }
+    } else {
+      newState.isListItemOpen = true;
+      newState.openedListItemId = id;
+    }
+    this.setState(newState)
   }
 
   /**
@@ -94,7 +59,11 @@ class EmployeeDirectory extends Component {
             <Search/>
             <Sorting/>
           </div>
-          <EmployeeList employeeList={this.state.employeeList}/>
+          <EmployeeList employeeList={this.state.employeeList}
+                        isListItemOpen={this.state.isListItemOpen}
+                        openedListItemId={this.state.openedListItemId}
+                        toggleListItem={this.toggleListItem}
+          />
         </div>
       </div>
     );

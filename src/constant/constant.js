@@ -12,7 +12,7 @@ module.exports = {
     "officePhone": "781-000-0001",
     "email": "jking@fakemail.com",
     "city": "Boston, MA",
-    "pic": "http://localhost:3000/img/pics/james_king.jpg",
+    "pic": "james_king.jpg",
     "twitterId": "@fakejking",
     "blog": "http://coenraets.org"
   }, {

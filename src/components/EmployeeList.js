@@ -6,7 +6,11 @@ const EmployeeList = (props) => {
   let employeeList = props.employeeList;
 
   const generateListItems = employeeList.map((employee) => {
-    return (<EmployeeListItem data={employee}/>)
+    return (<EmployeeListItem data={employee}
+                              isListItemOpen={props.isListItemOpen}
+                              openedListItemId={props.openedListItemId}
+                              toggleListItem={props.toggleListItem}
+    />)
   })
 
   return (

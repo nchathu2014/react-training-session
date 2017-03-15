@@ -2,19 +2,19 @@
 @import 'scss/mixins';
 @import 'scss/colors';
 
-body{
+body {
   text-align: center;
 }
 
 body {
   padding-top: 50px;
 }
+
 .starter-template {
   padding: 40px 15px;
 }
 
-
-#search-container{
+#search-container {
   display: block;
   float: left;
   margin-bottom: 20px;
@@ -42,7 +42,6 @@ body {
   padding: 4px;
 }
 
-
 .list > li > a > p:nth-of-type(1) {
   margin: 8px 0px 0px 0px;
   font-weight: bold;
@@ -64,9 +63,10 @@ body {
   background-color: #d6d6d6;
 }
 
-.list .detail h3{
+.list .detail h3 {
   margin: 10px 0 0 0;
 }
+
 .actions > li > a {
   padding-left: 12px;
 }
@@ -80,7 +80,7 @@ body {
 }
 
 .actions li p:nth-of-type(1) {
-  color:  #5DC1FF;
+  color: #5DC1FF;
   font-size: 0.9em;
   font-weight: lighter;
 }
@@ -90,7 +90,7 @@ body {
 }
 
 ul {
-  clear:both;
+  clear: both;
   border-top: none !important;
 }
 
@@ -152,13 +152,15 @@ ul {
 .slide-right.ng-enter,
 .slide-right.ng-leave {
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background: inherit;
   -ms-transition: .25s ease-in-out;
   -webkit-transition: .25s ease-in-out;
-  transition:  .25s ease-in-out;
+  transition: .25s ease-in-out;
 }
-
 
 .count {
   color: rgb(93, 193, 255);
@@ -168,3 +170,15 @@ ul {
   font-weight: bold;
 }
 
+.employee-list-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.employee-list-item-details {
+  background-color: lightcyan;
+}
+
+.detail {
+  text-align: left;
+}
